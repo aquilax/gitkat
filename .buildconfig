@@ -1,0 +1,10 @@
+[default]
+name=Default
+runtime=host
+config-opts=
+run-opts=
+prefix=/home/aquilax/.cache/gnome-builder/install/gtkat/host
+app-id=
+postbuild=
+prebuild=
+default=true
