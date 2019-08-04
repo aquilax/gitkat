@@ -24,13 +24,15 @@ int main (string[] args) {
 
     Gtk.init (ref args);
 
-    var window = new Window ();
+    var window = new Gtk.Window ();
     window.title = "gtkat";
-    window.border_width = 0;
-    window.window_position = WindowPosition.CENTER;
+    window.border_width = 2;
+    window.window_position = Gtk.WindowPosition.CENTER;
     window.destroy.connect (Gtk.main_quit);
+    window.set_accept_focus (false);
+    window.set_decorated (false);
 
-    var text_view = new TextView ();
+    var text_view = new Gtk.TextView ();
     text_view.editable = false;
     text_view.cursor_visible = false;
 
