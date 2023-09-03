@@ -3,24 +3,24 @@ using Gtk;
 int close_timeout = 1000;
 
 const GLib.OptionEntry[] options = {
-	// --timeout INT
-	{ "timeout", 0, 0, OptionArg.INT, ref close_timeout, "close timeout (default 1000 msec)", "INT" },
+    // --timeout INT
+    { "timeout", 0, 0, OptionArg.INT, ref close_timeout, "close timeout (default 1000 msec)", "INT" },
 
-	// list terminator
-	{ null }
+    // list terminator
+    { null }
 };
 
 int main (string[] args) {
     try {
-	    var opt_context = new OptionContext ("- GTK cat");
-    	opt_context.set_help_enabled (true);
-		opt_context.add_main_entries (options, null);
-		opt_context.parse (ref args);
-	} catch (OptionError e) {
-		print ("error: %s\n", e.message);
-		print ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
-		return 0;
-	}
+        var opt_context = new OptionContext ("- GTK cat");
+        opt_context.set_help_enabled (true);
+        opt_context.add_main_entries (options, null);
+        opt_context.parse (ref args);
+    } catch (OptionError e) {
+        print ("error: %s\n", e.message);
+        print ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
+        return 0;
+    }
 
     Gtk.init (ref args);
 
